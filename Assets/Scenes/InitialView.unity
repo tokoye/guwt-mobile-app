@@ -623,6 +623,7 @@ GameObject:
   - component: {fileID: 680809331}
   - component: {fileID: 680809330}
   - component: {fileID: 680809334}
+  - component: {fileID: 680809335}
   m_Layer: 5
   m_Name: InitialViewCanvas
   m_TagString: Untagged
@@ -723,6 +724,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 0}
+--- !u!114 &680809335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680809329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0f4c69407a8b946a7ac01a8f3d3251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &717320181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1067,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0fb43809f363f85429a03ce40d9a9310, type: 3}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -1117,7 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb43809f363f85429a03ce40d9a9310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drop: {fileID: 0}
+  drop: {fileID: 1326205278}
 --- !u!1 &1453187120
 GameObject:
   m_ObjectHideFlags: 0
