@@ -327,18 +327,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 48
+    m_MaxSize: 50
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: GU's History Department
+  m_Text: 
 --- !u!222 &206733419
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -663,8 +663,8 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -680,19 +680,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fda75852a23d4b4e9405beefe878427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beginTourButton: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -805,6 +792,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d5a0f0627f4c74c9993e5ffbb076e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb43809f363f85429a03ce40d9a9310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 1326205278}
+  fillData:
+    m_Text: 
+    m_Image: {fileID: 0}
+  beginTourButton: {fileID: 1018941132}
+  dropdownIndex: 0
 --- !u!1 &528320391
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +891,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 451801679}
   m_HandleRect: {fileID: 451801678}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1083,6 +1088,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 0}
+  fillData:
+    m_Text: 
+    m_Image: {fileID: 0}
+  beginTourButton: {fileID: 0}
+  dropdownIndex: 0
 --- !u!114 &680809335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1132,7 +1142,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: 0, y: 93.29517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717320183
 MonoBehaviour:
@@ -1378,7 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1436,7 +1446,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 28}
+  m_SizeDelta: {x: 0, y: 93.29517}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1221088976
 GameObject:
@@ -1476,7 +1486,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 0, y: 150}
+  m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1221088978
 MonoBehaviour:
@@ -1580,7 +1590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -79.419, y: -415}
+  m_AnchoredPosition: {x: -17.31, y: -353.9}
   m_SizeDelta: {x: 844.81824, y: 69.941315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254898623
@@ -1597,7 +1607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1616,7 +1626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tours offered by selected department:'
+  m_Text: 'Tours offered by:'
 --- !u!222 &1254898624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1639,7 +1649,7 @@ GameObject:
   - component: {fileID: 1326205278}
   - component: {fileID: 1326205281}
   m_Layer: 5
-  m_Name: OrganzationDropdown
+  m_Name: OrganizationDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1664,8 +1674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.668, y: 541}
-  m_SizeDelta: {x: 893.8549, y: 93.2952}
+  m_AnchoredPosition: {x: -40, y: 439}
+  m_SizeDelta: {x: 961.53546, y: 93.295166}
   m_Pivot: {x: 0.4579433, y: 0.5000007}
 --- !u!114 &1326205278
 MonoBehaviour:
@@ -1714,25 +1724,17 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: GU's History Department
-      m_Image: {fileID: 0}
-    - m_Text: Spokane Highway
-      m_Image: {fileID: 0}
-    - m_Text: Spokane River
-      m_Image: {fileID: 0}
-    - m_Text: GU's Environmental Science Department
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 519420035}
+        m_TargetAssemblyTypeName: OrganizationDropdown, Assembly-CSharp
+        m_MethodName: handleInputData
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1790,6 +1792,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drop: {fileID: 1326205278}
+  fillData:
+    m_Text: 
+    m_Image: {fileID: 0}
+  beginTourButton: {fileID: 0}
+  dropdownIndex: 0
 --- !u!1 &1453187120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,8 +1831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -37.393753}
+  m_SizeDelta: {x: 0, y: 74.78678}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453187122
 MonoBehaviour:
@@ -1963,7 +1970,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -18, y: 0}
+  m_SizeDelta: {x: 0, y: 411.34607}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1592260191
 MonoBehaviour:
@@ -2156,10 +2163,10 @@ RectTransform:
   m_Father: {fileID: 680809333}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.0017700195, y: -7.0999985}
-  m_SizeDelta: {x: -216.0935, y: 769.3056}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 983.9065, y: 769.3056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750546169
 MonoBehaviour:
@@ -2263,8 +2270,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -11, y: -0.00001049}
+  m_SizeDelta: {x: 167.14883, y: 49.999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752200820
 MonoBehaviour:
@@ -2500,8 +2507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: -0.5}
-  m_SizeDelta: {x: -30, y: -3}
+  m_AnchoredPosition: {x: -0.3999939, y: 19.012562}
+  m_SizeDelta: {x: -40.82892, y: -41.97488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889286241
 MonoBehaviour:
@@ -2525,16 +2532,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
+    m_BestFit: 1
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Option A
 --- !u!222 &1889286242
