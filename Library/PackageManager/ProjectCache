@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637485276130000000
+      ticks: 637502346030000000
     m_Hash: 195149752
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -411,6 +411,7 @@ m_PackageAssets:
         - 2.0.2
         - 2.0.3
         - 2.0.5
+        - 2.0.7
         compatible:
         - 1.0.2
         - 1.0.3
@@ -423,7 +424,8 @@ m_PackageAssets:
         - 2.0.2
         - 2.0.3
         - 2.0.5
-        verified: 2.0.5
+        - 2.0.7
+        verified: 2.0.7
       dependencies: []
       resolvedDependencies: []
       keywords: []

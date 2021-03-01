@@ -264,6 +264,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &732115737
 Canvas:
   m_ObjectHideFlags: 0
@@ -400,7 +401,7 @@ GameObject:
   - component: {fileID: 1136970250}
   - component: {fileID: 1136970249}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Campus living tour text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,7 +423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: 205.14}
+  m_AnchoredPosition: {x: 346, y: 76.536}
   m_SizeDelta: {x: 160, y: 32.790813}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136970249
@@ -501,8 +502,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.521, y: -127}
-  m_SizeDelta: {x: 31.042927, y: 36.046707}
+  m_AnchoredPosition: {x: 0.0015869, y: 0.00054169}
+  m_SizeDelta: {x: 84.169, y: 125.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156781343
 MonoBehaviour:
@@ -641,7 +642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80, y: 145}
+  m_AnchoredPosition: {x: 295, y: -122.69}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1388258279
@@ -658,6 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -737,7 +739,7 @@ GameObject:
   - component: {fileID: 1558378856}
   - component: {fileID: 1558378855}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Campus tour text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -759,7 +761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.958, y: 353}
+  m_AnchoredPosition: {x: -362.92, y: 77.931}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558378855
@@ -840,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.2, y: 273.8}
+  m_AnchoredPosition: {x: -367, y: -125}
   m_SizeDelta: {x: 151.83011, y: 34.613403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760829229
@@ -857,6 +859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
