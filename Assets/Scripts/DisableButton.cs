@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-public class DisableButton : MonoBehaviour
+//[RequireComponent(typeof(Button))]
+public class beginTourButton : MonoBehaviour
 {
-    public Button beginTourButton;
+    public Button tourButton;
 
     // Start is called before the first frame update
     void Start()
     {
-        beginTourButton.GetComponent<Button>();
-        beginTourButton.interactable = false;
+        tourButton = GameObject.Find("beginTourButton").GetComponent<Button>();
+        tourButton.interactable = false;
     }
 
     public void changeButton(bool tourSelected)
     {
         if (tourSelected == true)
         {
-            beginTourButton.interactable = true;
+            tourButton.interactable = true;
         }
         else
         {
-            beginTourButton.interactable = false;
+            tourButton.interactable = false;
         }
     }
 
