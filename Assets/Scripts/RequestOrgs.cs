@@ -21,7 +21,7 @@ public class RequestOrgs : MonoBehaviour
     public IEnumerator GetText()
     {
         UnityWebRequest request= UnityWebRequest.Get(url);
-        request.SetRequestHeader("Authentication", "");
+        request.SetRequestHeader("Authentication", "Api-Key b49aad95-4493-44ff-b18a-be8bb2d1e012");
 
         yield return request.SendWebRequest();
 
@@ -34,8 +34,8 @@ public class RequestOrgs : MonoBehaviour
             // Show results as text
             Debug.Log(request.downloadHandler.text);
 
-            var response = JsonConvert.DeserializeObject<List<RequestOrgs>>(request.downloadHandler.text);
-            Debug.Log(response[1].name);
+            var response = JsonConvert.DeserializeObject<OrgData>(request.downloadHandler.text);
+            Debug.Log(response.data[2].name);
 
             // Or retrieve results as binary data
             //byte[] results = request.downloadHandler.data;
