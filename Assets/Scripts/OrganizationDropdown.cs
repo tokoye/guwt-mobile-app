@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 
 public class OrganizationDropdown : MonoBehaviour
 {
-    List<string> stringOptions = new List<string> { "Select Organization", "GU's History Department","GU's Environmental Science Department", "Spokane Parks & Rec", "Spokane River"};
+    List<string> stringOptions = new List<string>();
     List<Dropdown.OptionData> optionDataOptions = new List<Dropdown.OptionData>();
     public Dropdown drop;
     public Dropdown.OptionData fillData;
     public Button beginTourButton;
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +32,9 @@ public class OrganizationDropdown : MonoBehaviour
         }
 
     }
+
+
+
 
     List<string> getOrganizations()
     {
