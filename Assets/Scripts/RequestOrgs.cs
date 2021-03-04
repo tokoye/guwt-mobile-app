@@ -43,13 +43,10 @@ public class RequestOrgs : MonoBehaviour
 
             Dropdown.OptionData fillData = new Dropdown.OptionData();
             fillData.text = response.data[0].department;
-            //orgDropdownNames.Add(fillData);
             drop.options.Add(fillData);
             fillData.text = response.data[1].department;
-            //orgDropdownNames.Add(fillData);
             drop.options.Add(fillData);
             fillData.text = response.data[2].department;
-            //orgDropdownNames.Add(fillData);
             drop.options.Add(fillData);
 
             Debug.Log(response.data[0].department);
