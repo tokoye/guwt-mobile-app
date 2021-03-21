@@ -27,7 +27,7 @@ public class RequestOrgs : MonoBehaviour
     public IEnumerator GetText()
     {
         request = UnityWebRequest.Get(url);
-        request.SetRequestHeader("Authentication", "Api-Key b49aad95-4493-44ff-b18a-be8bb2d1e012");
+        request.SetRequestHeader("Authentication", "Api-Key 6d924d5a-cfba-41cc-b21c-6aeabe874a86");
 
         yield return request.SendWebRequest();
 
@@ -38,7 +38,7 @@ public class RequestOrgs : MonoBehaviour
         else
         {
             // Show results as text
-            //Debug.Log(request.downloadHandler.text);
+            Debug.Log(request.downloadHandler.text);
             var response = JsonConvert.DeserializeObject<OrgData>(request.downloadHandler.text);
 
             Dropdown.OptionData fillData = new Dropdown.OptionData();
@@ -60,7 +60,10 @@ public class RequestOrgs : MonoBehaviour
 
     public void populateOrgsDropdown(List<Dropdown.OptionData> orgDropdownNames)
     {
+        //while (orgDropdownNames)
+        {
 
+        }
     }
 
 
