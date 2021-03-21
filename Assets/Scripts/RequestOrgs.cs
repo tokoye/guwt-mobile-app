@@ -14,6 +14,7 @@ public class RequestOrgs : MonoBehaviour
     public List<Dropdown.OptionData> orgDropdownNames = new List<Dropdown.OptionData>();
     public UnityWebRequest request;
     public Dropdown drop;
+    public List<Dropdown.OptionData> listOptions;
 
 
 
@@ -37,34 +38,25 @@ public class RequestOrgs : MonoBehaviour
         }
         else
         {
-            // Show results as text
+            // Show database results as text
             Debug.Log(request.downloadHandler.text);
             var response = JsonConvert.DeserializeObject<OrgData>(request.downloadHandler.text);
 
-            Dropdown.OptionData fillData = new Dropdown.OptionData();
-            fillData.text = response.data[0].department;
-            drop.options.Add(fillData);
-            fillData.text = response.data[1].department;
-            drop.options.Add(fillData);
-            fillData.text = response.data[2].department;
-            drop.options.Add(fillData);
 
-            Debug.Log(response.data[0].department);
-            Debug.Log(response.data[1].department);
-            Debug.Log(response.data[2].department);
+            List<string> stringOrgNames = new List<string>();
+            stringOrgNames.Add(response.data[0].department);
+            stringOrgNames.Add(response.data[1].department);
+            stringOrgNames.Add(response.data[2].department);
+            stringOrgNames.Add(response.data[3].department);
 
-
-            populateOrgsDropdown(orgDropdownNames);
+            foreach(string s in stringOrgNames)
+            {
+                Dropdown.OptionData fillData = new Dropdown.OptionData();
+                fillData.text = s;
+                drop.options.Add(fillData);
+                drop.RefreshShownValue();
+            }
         }
     }
-
-    public void populateOrgsDropdown(List<Dropdown.OptionData> orgDropdownNames)
-    {
-        //while (orgDropdownNames)
-        {
-
-        }
-    }
-
 
 }
