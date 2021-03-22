@@ -19,6 +19,7 @@ public class RequestOrgs : MonoBehaviour
     public Dropdown drop;
     public List<Dropdown.OptionData> listOptions;
     public int categorySelected;
+    public TourData tourResponse;
 
     //Buttons that are appear as each optional tour 
     public Button firstTourButton;
@@ -47,6 +48,8 @@ public class RequestOrgs : MonoBehaviour
             DropdownValueChanged(drop);
 
         });
+
+
     }
 
     //This function just locates the game objects on the screen and connects them to their respective
@@ -66,6 +69,23 @@ public class RequestOrgs : MonoBehaviour
         eighthTourButton = GameObject.Find("TourListItem8").GetComponent<Button>();
         ninthTourButton = GameObject.Find("TourListItem9").GetComponent<Button>();
         tenthTourButton = GameObject.Find("TourListItem10").GetComponent<Button>();
+
+        firstTourButton.onClick.AddListener(() => OnTourButtonClicked(0));
+        secondTourButton.onClick.AddListener(() => OnTourButtonClicked(1));
+        thirdTourButton.onClick.AddListener(() => OnTourButtonClicked(2));
+        fourthTourButton.onClick.AddListener(() => OnTourButtonClicked(3));
+        fifthTourButton.onClick.AddListener(() => OnTourButtonClicked(4));
+        sixthTourButton.onClick.AddListener(() => OnTourButtonClicked(5));
+        seventhTourButton.onClick.AddListener(() => OnTourButtonClicked(6));
+        eighthTourButton.onClick.AddListener(() => OnTourButtonClicked(7));
+        ninthTourButton.onClick.AddListener(() => OnTourButtonClicked(8));
+        tenthTourButton.onClick.AddListener(() => OnTourButtonClicked(9));
+
+    }
+
+    void OnTourButtonClicked(int index)
+    {
+        TourViewScript.tourData = tourResponse.data[0];
     }
 
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
@@ -121,10 +141,11 @@ public class RequestOrgs : MonoBehaviour
         {
             // Show database results as text
             Debug.Log("TOURS RESULT:    " + toursRequest.downloadHandler.text);
-            var response = JsonConvert.DeserializeObject<OrgData>(toursRequest.downloadHandler.text);
+            tourResponse = JsonConvert.DeserializeObject<TourData>(toursRequest.downloadHandler.text);
 
-            allTourNames.Add(response.data[0].name);
-            allTourNames.Add(response.data[1].name);
+            Debug.Log(tourResponse.data[1].name);
+            allTourNames.Add(tourResponse.data[0].name);
+            allTourNames.Add(tourResponse.data[1].name);
             setTourButtons();
         }
     }

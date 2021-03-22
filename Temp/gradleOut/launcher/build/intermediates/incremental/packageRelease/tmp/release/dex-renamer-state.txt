@@ -1,4 +1,0 @@
-#Sat Mar 20 11:48:26 PDT 2021
-base.0=C\:\\Users\\nicho\\Documents\\Senior Design\\my-branch\\guwt-mobile-app\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\release\\out\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
