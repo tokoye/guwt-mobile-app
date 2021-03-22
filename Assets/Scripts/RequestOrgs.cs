@@ -13,10 +13,12 @@ public class RequestOrgs : MonoBehaviour
     public Button DatabaseButton;
     public List<string> orgNames = new List<string>();
     public List<Dropdown.OptionData> orgDropdownNames = new List<Dropdown.OptionData>();
+    List<string> allTourNames = new List<string>();
     public UnityWebRequest orgRequest;
     public UnityWebRequest toursRequest;
     public Dropdown drop;
     public List<Dropdown.OptionData> listOptions;
+    public int categorySelected;
 
     //Buttons that are appear as each optional tour 
     public Button firstTourButton;
@@ -121,10 +123,9 @@ public class RequestOrgs : MonoBehaviour
             Debug.Log("TOURS RESULT:    " + toursRequest.downloadHandler.text);
             var response = JsonConvert.DeserializeObject<OrgData>(toursRequest.downloadHandler.text);
 
-            List<string> allTourNames = new List<string>();
             allTourNames.Add(response.data[0].name);
             allTourNames.Add(response.data[1].name);
-            setTourButtons(allTourNames);
+            setTourButtons();
         }
     }
 
@@ -132,12 +133,119 @@ public class RequestOrgs : MonoBehaviour
     //This function recognizes and responds to a selection that is made from the dropdown menu. 
     void DropdownValueChanged(Dropdown change)
     {
+        categorySelected = change.value;
+        setTourButtons();
     }
 
     //This function accepts a list of strings, which are the names of each tour. It takes those strings
     //and sets the appropriate number of buttons to clickable and sets their title to the name of the tour.
-    public void setTourButtons(List<string> alltourNames)
+    public void setTourButtons()
     {
-
+        //categorySelected (1=History, 2=CS, 3=Housing)
+        int totalTours = 0;
+        foreach(string s in allTourNames)
+        {
+            totalTours++;
+        }
+        //enabling the appropriate number of tours
+        enableButtons(totalTours);
     }
+
+
+    //This is absolutely **horrendous code**, but that is just how it is going to be for now. It enables the appropriate number of buttons
+    //when a category is selected depending on how many tours said category offers.
+    private void enableButtons(int num)
+    {
+        switch(num)
+        {
+            case 1:
+                firstTourButton.interactable = true;
+                break;
+            case 2: 
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                break;
+            case 3:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                break;
+            case 4:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                break;
+            case 5:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                fifthTourButton.interactable = true;
+                break;
+            case 6:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                fifthTourButton.interactable = true;
+                sixthTourButton.interactable = true;
+                break;
+            case 7:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                fifthTourButton.interactable = true;
+                sixthTourButton.interactable = true;
+                seventhTourButton.interactable = true;
+                break;
+            case 8:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                fifthTourButton.interactable = true;
+                sixthTourButton.interactable = true;
+                seventhTourButton.interactable = true;
+                eighthTourButton.interactable = true;
+                break;
+            case 9:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                fifthTourButton.interactable = true;
+                sixthTourButton.interactable = true;
+                seventhTourButton.interactable = true;
+                eighthTourButton.interactable = true;
+                ninthTourButton.interactable = true;
+                break;
+            case 10:
+                firstTourButton.interactable = true;
+                secondTourButton.interactable = true;
+                thirdTourButton.interactable = true;
+                fourthTourButton.interactable = true;
+                fifthTourButton.interactable = true;
+                sixthTourButton.interactable = true;
+                seventhTourButton.interactable = true;
+                eighthTourButton.interactable = true;
+                ninthTourButton.interactable = true;
+                tenthTourButton.interactable = true;
+                break;
+            default:
+                firstTourButton.interactable = false;
+                secondTourButton.interactable = false;
+                thirdTourButton.interactable = false;
+                fourthTourButton.interactable = false;
+                fifthTourButton.interactable = false;
+                sixthTourButton.interactable = false;
+                seventhTourButton.interactable = false;
+                eighthTourButton.interactable = false;
+                ninthTourButton.interactable = false;
+                tenthTourButton.interactable = false;
+                break;
+        }
+    }
+
 }
