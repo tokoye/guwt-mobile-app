@@ -147,7 +147,8 @@ public class RequestOrgs : MonoBehaviour
         {
             totalTours++;
         }
-        //enabling the appropriate number of tours
+        //enabling the appropriate number of tours. 
+        //TODO: FIGURE OUT HOW MANY TOURS ARE IN THE SELECTED CATEGORY AND PASS THAT NUMBER, NOT THE TOTAL NUMBER TOURS
         enableButtons(totalTours);
     }
 
