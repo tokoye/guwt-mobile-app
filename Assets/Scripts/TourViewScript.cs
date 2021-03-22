@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TourViewScript : MonoBehaviour
 {
-    static public string tourData = "hello";
+    static public SingleTour tourData;
 
     string url = "";
     public double lat = 47.66685234815894;      //initial latitude and longitude to center on
@@ -98,7 +98,7 @@ public class TourViewScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(organizationData);
+        print("this is a tour" + tourData.name);
         debugTest = GameObject.Find("DebugTest").GetComponent<Text>();
         //debugTest.text = "worked";
 
