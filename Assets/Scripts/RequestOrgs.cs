@@ -85,7 +85,8 @@ public class RequestOrgs : MonoBehaviour
 
     void OnTourButtonClicked(int index)
     {
-        TourViewScript.tourData = tourResponse.data[0];
+        Debug.Log("Tour Button " + index + " Pressed:" + tourResponse.data[index].name);
+        TourViewScript.tourData = tourResponse.data[index];
     }
 
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
