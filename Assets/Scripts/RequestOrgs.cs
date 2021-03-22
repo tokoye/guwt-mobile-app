@@ -71,8 +71,13 @@ public class RequestOrgs : MonoBehaviour
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
     public IEnumerator GetText()
     {
+<<<<<<< HEAD
         orgRequest = UnityWebRequest.Get(orgUrl);
         orgRequest.SetRequestHeader("Authentication", APIKey);
+=======
+        request = UnityWebRequest.Get(url);
+        request.SetRequestHeader("Authentication", "Api-Key 6d924d5a-cfba-41cc-b21c-6aeabe874a86");
+>>>>>>> nick
 
         yield return orgRequest.SendWebRequest();
 
