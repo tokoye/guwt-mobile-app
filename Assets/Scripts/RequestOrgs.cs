@@ -38,7 +38,7 @@ public class RequestOrgs : MonoBehaviour
     public void Start()
     {
         FindGameObjects();
-        StartCoroutine(GetText());
+        StartCoroutine(GetOrganizations());
         StartCoroutine(GetTours());
 
 
@@ -81,7 +81,7 @@ public class RequestOrgs : MonoBehaviour
     }
 
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
-    public IEnumerator GetText()
+    public IEnumerator GetOrganizations()
     {
         orgRequest = UnityWebRequest.Get(orgUrl);
         orgRequest.SetRequestHeader("Authentication", APIKey);
@@ -100,11 +100,11 @@ public class RequestOrgs : MonoBehaviour
 
 
             List<string> stringOrgNames = new List<string>();
-            stringOrgNames.Add(response.data[0].department);
-            stringOrgNames.Add(response.data[1].department);
-            stringOrgNames.Add(response.data[2].department);
-            stringOrgNames.Add(response.data[3].department);
-
+            stringOrgNames.Add(response.data[0].organization);
+            stringOrgNames.Add(response.data[1].organization);
+            stringOrgNames.Add(response.data[2].organization);
+            stringOrgNames.Add(response.data[3].organization);
+            Debug.Log("STRING NAMES: " + response.data[0].organization + " " + response.data[1].organization);
             foreach (string s in stringOrgNames)
             {
                 Dropdown.OptionData fillData = new Dropdown.OptionData();
@@ -140,10 +140,10 @@ public class RequestOrgs : MonoBehaviour
 
             //TODO: ADD ALL TOURS FROM DATABASE RESPONSE
             allTourNames.Add(response.data[0].name);
-            organizationOfEachTour.Add(response.data[0].department);
-            Debug.Log("Name of the first org: " + response.data[0].department);
+            organizationOfEachTour.Add(response.data[0].organization);
+            Debug.Log("Name of the first org: " + response.data[0].organization);
             allTourNames.Add(response.data[1].name);
-            organizationOfEachTour.Add(response.data[1].department);
+            organizationOfEachTour.Add(response.data[1].organization);
             //setTourButtons();
         }
     }
@@ -153,7 +153,7 @@ public class RequestOrgs : MonoBehaviour
     void DropdownValueChanged(Dropdown change)
     {
         string organizationSelectedString = change.options[change.value].text;
-        Debug.Log("Organization Selected: " + organizationSelectedString);
+        //Debug.Log("Organization Selected: " + organizationSelectedString);
         categorySelected = change.value;
         setTourButtons(organizationSelectedString);
     }
@@ -178,7 +178,7 @@ public class RequestOrgs : MonoBehaviour
     //It also changes the text of the buttons to 
     private void enableButtons(int num, string orgSelectedString)
     {
-        Debug.Log("Org 1: " + organizationOfEachTour[0] + " Org 2: " + organizationOfEachTour[1]);
+        //Debug.Log("Org 1: " + organizationOfEachTour[0] + " Org 2: " + organizationOfEachTour[1]);
         for (int i = 0; i < num; i++)
         {
             buttonList[i].interactable = true;
