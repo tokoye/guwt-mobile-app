@@ -10,8 +10,8 @@ public class RequestOrgs : MonoBehaviour
     private string orgUrl = "https://backend.gonzagatours.app/api/organizations";
     private string toursUrl = "https://backend.gonzagatours.app/tour/tours";
     private string APIKey = "Api-Key 6d924d5a-cfba-41cc-b21c-6aeabe874a86";
-    public Button DatabaseButton;
     public List<string> orgNames = new List<string>();
+    public List<Button> buttonList = new List<Button>();
     public List<Dropdown.OptionData> orgDropdownNames = new List<Dropdown.OptionData>();
     List<string> allTourNames = new List<string>();
     public UnityWebRequest orgRequest;
@@ -19,6 +19,7 @@ public class RequestOrgs : MonoBehaviour
     public Dropdown drop;
     public List<Dropdown.OptionData> listOptions;
     public int categorySelected;
+    public List<string> organizationOfEachTour = new List<string>();
 
     //Buttons that are appear as each optional tour 
     public Button firstTourButton;
@@ -37,7 +38,7 @@ public class RequestOrgs : MonoBehaviour
     public void Start()
     {
         FindGameObjects();
-        StartCoroutine(GetText());
+        StartCoroutine(GetOrganizations());
         StartCoroutine(GetTours());
 
 
@@ -50,26 +51,37 @@ public class RequestOrgs : MonoBehaviour
     }
 
     //This function just locates the game objects on the screen and connects them to their respective
-    //names here, so that they can be changed and altered dynamically.
+    //names here, so that they can be changed and altered dynamically. 
     public void FindGameObjects()
     {
         drop = GameObject.Find("OrganizationDropdown").GetComponent<Dropdown>();
         drop.ClearOptions();
 
         firstTourButton = GameObject.Find("TourListItem1").GetComponent<Button>();
+        buttonList.Add(firstTourButton);
         secondTourButton = GameObject.Find("TourListItem2").GetComponent<Button>();
+        buttonList.Add(secondTourButton);
         thirdTourButton = GameObject.Find("TourListItem3").GetComponent<Button>();
+        buttonList.Add(thirdTourButton);
         fourthTourButton = GameObject.Find("TourListItem4").GetComponent<Button>();
+        buttonList.Add(fourthTourButton);
         fifthTourButton = GameObject.Find("TourListItem5").GetComponent<Button>();
+        buttonList.Add(fifthTourButton);
         sixthTourButton = GameObject.Find("TourListItem6").GetComponent<Button>();
+        buttonList.Add(sixthTourButton);
         seventhTourButton = GameObject.Find("TourListItem7").GetComponent<Button>();
+        buttonList.Add(seventhTourButton);
         eighthTourButton = GameObject.Find("TourListItem8").GetComponent<Button>();
+        buttonList.Add(eighthTourButton);
         ninthTourButton = GameObject.Find("TourListItem9").GetComponent<Button>();
+        buttonList.Add(ninthTourButton);
         tenthTourButton = GameObject.Find("TourListItem10").GetComponent<Button>();
+        buttonList.Add(tenthTourButton);
+
     }
 
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
-    public IEnumerator GetText()
+    public IEnumerator GetOrganizations()
     {
         orgRequest = UnityWebRequest.Get(orgUrl);
         orgRequest.SetRequestHeader("Authentication", APIKey);
@@ -88,11 +100,11 @@ public class RequestOrgs : MonoBehaviour
 
 
             List<string> stringOrgNames = new List<string>();
-            stringOrgNames.Add(response.data[0].department);
-            stringOrgNames.Add(response.data[1].department);
-            stringOrgNames.Add(response.data[2].department);
-            stringOrgNames.Add(response.data[3].department);
-
+            stringOrgNames.Add(response.data[0].organization);
+            stringOrgNames.Add(response.data[1].organization);
+            stringOrgNames.Add(response.data[2].organization);
+            stringOrgNames.Add(response.data[3].organization);
+            Debug.Log("STRING NAMES: " + response.data[0].organization + " " + response.data[1].organization);
             foreach (string s in stringOrgNames)
             {
                 Dropdown.OptionData fillData = new Dropdown.OptionData();
@@ -104,7 +116,7 @@ public class RequestOrgs : MonoBehaviour
     }
 
 
-
+    //This function calls the Tours API, which returns critical data about tour stops, media, location, etc. 
     public IEnumerator GetTours()
     {
         toursRequest = UnityWebRequest.Get(toursUrl);
@@ -122,10 +134,17 @@ public class RequestOrgs : MonoBehaviour
             // Show database results as text
             Debug.Log("TOURS RESULT:    " + toursRequest.downloadHandler.text);
             var response = JsonConvert.DeserializeObject<OrgData>(toursRequest.downloadHandler.text);
+            //***********
+            //WHEN WE DESERIALIZE, THE DEPARTMENT IS NOT POPULATING IN THE SINGLEORG CLASS
+            //***********
 
+            //TODO: ADD ALL TOURS FROM DATABASE RESPONSE
             allTourNames.Add(response.data[0].name);
+            organizationOfEachTour.Add(response.data[0].organization);
+            Debug.Log("Name of the first org: " + response.data[0].organization);
             allTourNames.Add(response.data[1].name);
-            setTourButtons();
+            organizationOfEachTour.Add(response.data[1].organization);
+            //setTourButtons();
         }
     }
 
@@ -133,13 +152,15 @@ public class RequestOrgs : MonoBehaviour
     //This function recognizes and responds to a selection that is made from the dropdown menu. 
     void DropdownValueChanged(Dropdown change)
     {
+        string organizationSelectedString = change.options[change.value].text;
+        //Debug.Log("Organization Selected: " + organizationSelectedString);
         categorySelected = change.value;
-        setTourButtons();
+        setTourButtons(organizationSelectedString);
     }
 
     //This function accepts a list of strings, which are the names of each tour. It takes those strings
     //and sets the appropriate number of buttons to clickable and sets their title to the name of the tour.
-    public void setTourButtons()
+    public void setTourButtons(string orgSelectedString)
     {
         //categorySelected (1=History, 2=CS, 3=Housing)
         int totalTours = 0;
@@ -147,105 +168,26 @@ public class RequestOrgs : MonoBehaviour
         {
             totalTours++;
         }
-        //enabling the appropriate number of tours
-        enableButtons(totalTours);
+        //enabling the appropriate number of tours. 
+        //TODO: FIGURE OUT HOW MANY TOURS ARE IN THE SELECTED CATEGORY AND PASS THAT NUMBER, NOT THE TOTAL NUMBER TOURS
+        enableButtons(totalTours, orgSelectedString);
     }
 
 
-    //This is absolutely **horrendous code**, but that is just how it is going to be for now. It enables the appropriate number of buttons
-    //when a category is selected depending on how many tours said category offers.
-    private void enableButtons(int num)
+    //It enables the appropriate number of buttons when a category is selected depending on how many tours said category offers.
+    //It also changes the text of the buttons to 
+    private void enableButtons(int num, string orgSelectedString)
     {
-        switch(num)
+        //Debug.Log("Org 1: " + organizationOfEachTour[0] + " Org 2: " + organizationOfEachTour[1]);
+        for (int i = 0; i < num; i++)
         {
-            case 1:
-                firstTourButton.interactable = true;
-                break;
-            case 2: 
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                break;
-            case 3:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                break;
-            case 4:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                break;
-            case 5:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                fifthTourButton.interactable = true;
-                break;
-            case 6:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                fifthTourButton.interactable = true;
-                sixthTourButton.interactable = true;
-                break;
-            case 7:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                fifthTourButton.interactable = true;
-                sixthTourButton.interactable = true;
-                seventhTourButton.interactable = true;
-                break;
-            case 8:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                fifthTourButton.interactable = true;
-                sixthTourButton.interactable = true;
-                seventhTourButton.interactable = true;
-                eighthTourButton.interactable = true;
-                break;
-            case 9:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                fifthTourButton.interactable = true;
-                sixthTourButton.interactable = true;
-                seventhTourButton.interactable = true;
-                eighthTourButton.interactable = true;
-                ninthTourButton.interactable = true;
-                break;
-            case 10:
-                firstTourButton.interactable = true;
-                secondTourButton.interactable = true;
-                thirdTourButton.interactable = true;
-                fourthTourButton.interactable = true;
-                fifthTourButton.interactable = true;
-                sixthTourButton.interactable = true;
-                seventhTourButton.interactable = true;
-                eighthTourButton.interactable = true;
-                ninthTourButton.interactable = true;
-                tenthTourButton.interactable = true;
-                break;
-            default:
-                firstTourButton.interactable = false;
-                secondTourButton.interactable = false;
-                thirdTourButton.interactable = false;
-                fourthTourButton.interactable = false;
-                fifthTourButton.interactable = false;
-                sixthTourButton.interactable = false;
-                seventhTourButton.interactable = false;
-                eighthTourButton.interactable = false;
-                ninthTourButton.interactable = false;
-                tenthTourButton.interactable = false;
-                break;
+            buttonList[i].interactable = true;
+            //If the organization of the tour equals the name of the organization selected, enable button and label it.
+            if (organizationOfEachTour[i].Equals(orgSelectedString))
+            {
+                buttonList[i].GetComponentInChildren<Text>().text = allTourNames[i];
+            }
+
         }
     }
-
 }
