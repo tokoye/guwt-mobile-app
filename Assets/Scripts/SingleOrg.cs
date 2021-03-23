@@ -7,5 +7,5 @@ public class SingleOrg
 {
     public string name;
     public string _id;
-    public string department;
+    public string organization;
 }
