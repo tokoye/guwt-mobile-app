@@ -156,19 +156,19 @@ public class RequestOrgs : MonoBehaviour
             tourResponse = JsonConvert.DeserializeObject<TourData>(toursRequest.downloadHandler.text);
 
             Debug.Log(tourResponse.data[1].name);
-            allTourNames.Add(tourResponse.data[0].name);
-            allTourNames.Add(tourResponse.data[1].name);
-            setTourButtons();
+            //allTourNames.Add(tourResponse.data[0].name);
+            //allTourNames.Add(tourResponse.data[1].name);
+            //setTourButtons();
             //***********
             //WHEN WE DESERIALIZE, THE DEPARTMENT IS NOT POPULATING IN THE SINGLEORG CLASS
             //***********
 
             //TODO: ADD ALL TOURS FROM DATABASE RESPONSE
-            allTourNames.Add(response.data[0].name);
-            organizationOfEachTour.Add(response.data[0].organization);
-            Debug.Log("Name of the first org: " + response.data[0].organization);
-            allTourNames.Add(response.data[1].name);
-            organizationOfEachTour.Add(response.data[1].organization);
+            allTourNames.Add(tourResponse.data[0].name);
+            organizationOfEachTour.Add(tourResponse.data[0].organization);
+            Debug.Log("Name of the first org: " + tourResponse.data[0].organization);
+            allTourNames.Add(tourResponse.data[1].name);
+            organizationOfEachTour.Add(tourResponse.data[1].organization);
             //setTourButtons();
         }
     }
