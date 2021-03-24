@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"process_id" : 12204,
 	"version" : "2020.1.9f1",
 	"app_path" : "C:/Program Files/Unity/Hub/Editor/2020.1.9f1/Editor/Unity.exe",
@@ -10,4 +11,10 @@
 	"app_path" : "C:/Program Files/Unity/Hub/Editor/2020.2.6f1/Editor/Unity.exe",
 	"app_contents_path" : "C:/Program Files/Unity/Hub/Editor/2020.2.6f1/Editor/Data"
 >>>>>>> SpencerJacobs13-Spencer
+=======
+	"process_id" : 21043,
+	"version" : "2020.2.6f1",
+	"app_path" : "/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app",
+	"app_contents_path" : "/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents"
+>>>>>>> 311c70c6976bc5ea11bafc9e95d3e0e4ee456de5
 }

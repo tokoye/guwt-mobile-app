@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{86C55F2B-BF24-57D4-ECBF-51CB032D481F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackToInitialView.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ChangeToResources.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/OpenLinks.cs" />
+      <File FileName="Assets/Scripts/OpenAdmissionsLink.cs" />
+      <File FileName="Assets/Scripts/OpenCalenderLink.cs" />
+      <File FileName="Assets/Scripts/OpenSignUp.cs" />
+      <File FileName="Assets/Scripts/BackToInitialView.cs" Line="13" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4337f940-ae2e-44cf-b9c2-9bdd3a25f35d" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
