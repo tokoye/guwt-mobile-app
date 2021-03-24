@@ -20,6 +20,7 @@ public class RequestOrgs : MonoBehaviour
     public List<Dropdown.OptionData> listOptions;
     public int categorySelected;
     public TourData tourResponse;
+    public TourData orgTourData; //tour data specific to the organization selected
     public List<string> organizationOfEachTour = new List<string>();
 
     //Buttons that are appear as each optional tour 
@@ -77,6 +78,7 @@ public class RequestOrgs : MonoBehaviour
         ninthTourButton = GameObject.Find("TourListItem9").GetComponent<Button>();
         buttonList.Add(ninthTourButton);
         tenthTourButton = GameObject.Find("TourListItem10").GetComponent<Button>();
+        buttonList.Add(tenthTourButton);
 
         firstTourButton.onClick.AddListener(() => OnTourButtonClicked(0));
         secondTourButton.onClick.AddListener(() => OnTourButtonClicked(1));
@@ -93,9 +95,8 @@ public class RequestOrgs : MonoBehaviour
 
     void OnTourButtonClicked(int index)
     {
-        Debug.Log("Tour Button " + index + " Pressed:" + tourResponse.data[index].name);
-        TourViewScript.tourData = tourResponse.data[index];
-        buttonList.Add(tenthTourButton);
+        Debug.Log("Tour Button " + index + " Pressed:" + orgTourData.data[index].name);
+        TourViewScript.tourData = orgTourData.data[index];
     }
 
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
@@ -179,11 +180,13 @@ public class RequestOrgs : MonoBehaviour
     {
         disableButtons();
         int count = 0;
+        orgTourData.data.Clear();
         for (int i = 0; i < allTourNames.Count; i++)
         {
             //If the organization of the tour equals the name of the organization selected, enable button and label it.
             if (organizationOfEachTour[i].Equals(orgSelectedString))
             {
+                orgTourData.data.Add(tourResponse.data[i]);
                 buttonList[count].interactable = true;
                 buttonList[count].GetComponentInChildren<Text>().text = allTourNames[i];
                 count++;
