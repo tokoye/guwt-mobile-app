@@ -38,9 +38,9 @@ public class TourViewScript : MonoBehaviour
             "&zoom=" + zoom + "&size=" + mapWidth + "x" + mapHeight +
             "&maptype=" + mapSelected + "&key=" + key;
 
-        for (int i = 0; i < markers.Length; i++)
+        for (int i = 0; i < tourData.stops.Count; i++)
         {
-            url += "&markers=color:red|label:S|" + markers[i];
+            url += "&markers=color:red|label:" + i + "|" + tourData.stops[i].lat + "," + tourData.stops[i].lng;
         }
 
         url += "&markers=color:blue|label:Y|" + lat + "," + lon;
@@ -151,6 +151,7 @@ public class TourViewScript : MonoBehaviour
             int temp = i + 1;
             text +=  temp + ") Name: " + tourData.stops[i].stop_name + "\n";
             text += "\t" + "Latitude: " + tourData.stops[i].lat + "\n";
+            text += "\t" + "Longitude: " + tourData.stops[i].lng + "\n";
         }
         stopInfo.text = text;
     }
