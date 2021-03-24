@@ -197,6 +197,7 @@ public class RequestOrgs : MonoBehaviour
         for(int i = 0; i < buttonList.Count; i++)
         {
             buttonList[i].interactable = false;
+            buttonList[i].GetComponentInChildren<Text>().text = "-";
         }
     }
 }
