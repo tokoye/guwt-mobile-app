@@ -42,12 +42,10 @@ public class RequestOrgs : MonoBehaviour
         StartCoroutine(GetOrganizations());
         StartCoroutine(GetTours());
 
-
         //adding listener to dropdown, which responds appropriately when a selection is made
         drop.onValueChanged.AddListener(delegate
         {
             DropdownValueChanged(drop);
-
         });
 
 
@@ -120,11 +118,14 @@ public class RequestOrgs : MonoBehaviour
 
 
             List<string> stringOrgNames = new List<string>();
-            stringOrgNames.Add(response.data[0].organization);
-            stringOrgNames.Add(response.data[1].organization);
-            stringOrgNames.Add(response.data[2].organization);
-            stringOrgNames.Add(response.data[3].organization);
-            Debug.Log("STRING NAMES: " + response.data[0].organization + " " + response.data[1].organization);
+
+            //read all organization names to a list
+            for(int i = 0; i < response.data.Count; i++)
+            {
+                stringOrgNames.Add(response.data[i].name);
+            }
+
+            //populate the dropdown menu options 
             foreach (string s in stringOrgNames)
             {
                 Dropdown.OptionData fillData = new Dropdown.OptionData();
@@ -134,7 +135,6 @@ public class RequestOrgs : MonoBehaviour
             }
         }
     }
-
 
     //This function calls the Tours API, which returns critical data about tour stops, media, location, etc. 
     public IEnumerator GetTours()
@@ -155,21 +155,12 @@ public class RequestOrgs : MonoBehaviour
             Debug.Log("TOURS RESULT:    " + toursRequest.downloadHandler.text);
             tourResponse = JsonConvert.DeserializeObject<TourData>(toursRequest.downloadHandler.text);
 
-            Debug.Log(tourResponse.data[1].name);
-            allTourNames.Add(tourResponse.data[0].name);
-            allTourNames.Add(tourResponse.data[1].name);
-            setTourButtons();
-            //***********
-            //WHEN WE DESERIALIZE, THE DEPARTMENT IS NOT POPULATING IN THE SINGLEORG CLASS
-            //***********
-
-            //TODO: ADD ALL TOURS FROM DATABASE RESPONSE
-            allTourNames.Add(response.data[0].name);
-            organizationOfEachTour.Add(response.data[0].organization);
-            Debug.Log("Name of the first org: " + response.data[0].organization);
-            allTourNames.Add(response.data[1].name);
-            organizationOfEachTour.Add(response.data[1].organization);
-            //setTourButtons();
+            //adding tour names and tour organizations to their own lists
+            for(int i = 0; i < tourResponse.data.Count; i++)
+            {
+                allTourNames.Add(tourResponse.data[i].name);
+                organizationOfEachTour.Add(tourResponse.data[i].organization);
+            }
         }
     }
 
@@ -178,41 +169,35 @@ public class RequestOrgs : MonoBehaviour
     void DropdownValueChanged(Dropdown change)
     {
         string organizationSelectedString = change.options[change.value].text;
-        //Debug.Log("Organization Selected: " + organizationSelectedString);
         categorySelected = change.value;
-        setTourButtons(organizationSelectedString);
+        enableButtons(organizationSelectedString);
     }
-
-    //This function accepts a list of strings, which are the names of each tour. It takes those strings
-    //and sets the appropriate number of buttons to clickable and sets their title to the name of the tour.
-    public void setTourButtons(string orgSelectedString)
-    {
-        //categorySelected (1=History, 2=CS, 3=Housing)
-        int totalTours = 0;
-        foreach(string s in allTourNames)
-        {
-            totalTours++;
-        }
-        //enabling the appropriate number of tours. 
-        //TODO: FIGURE OUT HOW MANY TOURS ARE IN THE SELECTED CATEGORY AND PASS THAT NUMBER, NOT THE TOTAL NUMBER TOURS
-        enableButtons(totalTours, orgSelectedString);
-    }
-
 
     //It enables the appropriate number of buttons when a category is selected depending on how many tours said category offers.
     //It also changes the text of the buttons to 
-    private void enableButtons(int num, string orgSelectedString)
+    private void enableButtons(string orgSelectedString)
     {
-        //Debug.Log("Org 1: " + organizationOfEachTour[0] + " Org 2: " + organizationOfEachTour[1]);
-        for (int i = 0; i < num; i++)
+        disableButtons();
+        int count = 0;
+        for (int i = 0; i < allTourNames.Count; i++)
         {
-            buttonList[i].interactable = true;
             //If the organization of the tour equals the name of the organization selected, enable button and label it.
             if (organizationOfEachTour[i].Equals(orgSelectedString))
             {
-                buttonList[i].GetComponentInChildren<Text>().text = allTourNames[i];
+                buttonList[count].interactable = true;
+                buttonList[count].GetComponentInChildren<Text>().text = allTourNames[i];
+                count++;
             }
 
+        }
+    }
+
+    private void disableButtons()
+    {
+        for(int i = 0; i < buttonList.Count; i++)
+        {
+            buttonList[i].interactable = false;
+            buttonList[i].GetComponentInChildren<Text>().text = "-";
         }
     }
 }

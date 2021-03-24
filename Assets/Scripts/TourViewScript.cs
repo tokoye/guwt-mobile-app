@@ -28,6 +28,8 @@ public class TourViewScript : MonoBehaviour
 
     public Button resetButton;
     public Text debugTest;
+    public Text tourInfo;
+    public Text stopInfo;
 
     //this handles getting the google map and placing it on the texture
     IEnumerator GetGoogleMap(double lat, double lon)
@@ -102,6 +104,9 @@ public class TourViewScript : MonoBehaviour
         debugTest = GameObject.Find("DebugTest").GetComponent<Text>();
         //debugTest.text = "worked";
 
+        LoadTourInfo();
+        LoadStopInfo();
+
         mapCoroutine = GetGoogleMap(lat, lon);
         StartCoroutine(mapCoroutine);
 
@@ -124,6 +129,30 @@ public class TourViewScript : MonoBehaviour
             resetMap = false;
         }
 
+    }
+
+    public void LoadTourInfo()
+    {
+        tourInfo = GameObject.Find("TourDetailsText").GetComponent<Text>();
+        string text = "";
+        text += "Tour Name: " + tourData.name + "\n";
+        text += "Organization: " + tourData.organization + "\n";
+        text += "Departement: " + tourData.departement + "\n";
+        text += "Number of stops: " + tourData.stops.Count + "\n";
+        tourInfo.text = text;
+    }
+
+    public void LoadStopInfo()
+    {
+        stopInfo = GameObject.Find("StopDetailsText").GetComponent<Text>();
+        string text = "";
+        for(int i = 0; i < tourData.stops.Count; i++)
+        {
+            int temp = i + 1;
+            text +=  temp + ") Name: " + tourData.stops[i].stop_name + "\n";
+            text += "\t" + "Latitude: " + tourData.stops[i].lat + "\n";
+        }
+        stopInfo.text = text;
     }
 
     public void onRefreshButtonClicked()
