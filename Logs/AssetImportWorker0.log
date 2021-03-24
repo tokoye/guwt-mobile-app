@@ -4,7 +4,11 @@ OS: 'Windows 10 Home; OS build 18363.1440; Version 1909; 64bit' Language: 'en' P
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
+<<<<<<< HEAD
 C:\Program Files\Unity\Hub\Editor\2020.2.6f1\Editor\Unity.exe
+=======
+/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/MacOS/Unity
+>>>>>>> 311c70c6976bc5ea11bafc9e95d3e0e4ee456de5
 -adb2
 -batchMode
 -noUpm
@@ -15,6 +19,7 @@ C:/Users/spenc/OneDrive/Documents/GitHub/guwt-mobile-app
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 50011
 Successfully changed project path to: C:/Users/spenc/OneDrive/Documents/GitHub/guwt-mobile-app
 C:/Users/spenc/OneDrive/Documents/GitHub/guwt-mobile-app
@@ -42,15 +47,50 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.6f1/E
 Registered in 0.002554 seconds.
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 34.34 ms, found 0 plugins.
+=======
+59868
+Successfully changed project path to: /Users/tobennaokoye/Documents/GitHub/guwt-mobile-app
+/Users/tobennaokoye/Documents/GitHub/guwt-mobile-app
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 32.13 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.6f1 (8a2143876886)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/tobennaokoye/Documents/GitHub/guwt-mobile-app/Assets
+GfxDevice: creating device client; threaded=0
+2021-03-24 12:15:04.618 Unity[21089:15149160] Color LCD preferred device: Intel Iris Pro Graphics (low power)
+2021-03-24 12:15:04.618 Unity[21089:15149160] Metal devices available: 1
+2021-03-24 12:15:04.618 Unity[21089:15149160] 0: Intel Iris Pro Graphics (low power)
+2021-03-24 12:15:04.619 Unity[21089:15149160] Using device Intel Iris Pro Graphics (low power)
+Initializing Metal device caps: Intel Iris Pro Graphics
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56089
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.000915 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 34.89 ms, found 1 plugins.
+>>>>>>> 311c70c6976bc5ea11bafc9e95d3e0e4ee456de5
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  2.321 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
 Registered in 0.002797 seconds.
+=======
+- Completed reload, in  2.690 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000512 seconds.
+>>>>>>> 311c70c6976bc5ea11bafc9e95d3e0e4ee456de5
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
@@ -59,6 +99,7 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.101 seconds
 Platform modules already initialized, skipping
 ========================================================================
@@ -686,3 +727,27 @@ Total: 1.747300 ms (FindLiveObjects: 0.148900 ms CreateObjectMapping: 0.042600 m
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+=======
+- Completed reload, in  1.306 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2020.2.6f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1201 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.7 MB.
+System memory in use after: 114.8 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1645.
+Total: 2.381127 ms (FindLiveObjects: 0.261405 ms CreateObjectMapping: 0.075308 ms MarkObjects: 1.961984 ms  DeleteObjects: 0.080826 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/GU Resources.unity
+  artifactKey: Guid(06aa09f534d8347579afba10f38663de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/GU Resources.unity using Guid(06aa09f534d8347579afba10f38663de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '651a3b7dbcea3871ab391f14c0a5d68c') in 0.018637 seconds
+  Import took 0.023155 seconds .
+
+>>>>>>> 311c70c6976bc5ea11bafc9e95d3e0e4ee456de5
