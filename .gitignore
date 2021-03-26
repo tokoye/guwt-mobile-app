@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 
-Library/Artifacts/85/853315051a96774dfd756d7b6215c78f
 Temp/UnityLockfile
+
+#just add to this list when we get a conflict
+Library/Artifacts/85/853315051a96774dfd756d7b6215c78f
+Library/SceneVisibilityState.asset
+Library/ScriptAssemblies/Assembly-CSharp.dll
+Library/ScriptAssemblies/Assembly-CSharp.pdb
