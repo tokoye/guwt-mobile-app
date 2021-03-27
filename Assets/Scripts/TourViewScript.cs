@@ -74,14 +74,12 @@ public class TourViewScript : MonoBehaviour
 
         if (maxWait < 1)
         {
-            debugTest.text = "Timed Out";
             print("Timed out");
             yield break;
         }
 
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            debugTest.text = "Unable to determine device location";
             print("Unable to determine device location");
             yield break;
         }
@@ -91,9 +89,14 @@ public class TourViewScript : MonoBehaviour
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
             print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-            resetMap = true;
         }
         Input.location.Stop(); 
+    }
+
+    void RepeatEverySecond()
+    {
+        locationCoroutine = GetLocation();
+        StartCoroutine(locationCoroutine);
     }
 
 
@@ -116,6 +119,10 @@ public class TourViewScript : MonoBehaviour
 
         locationCoroutine = GetLocation();
         StartCoroutine(locationCoroutine);
+
+        InvokeRepeating("RepeatEverySecond", 1, 1);
+
+        resetMap = true;
     }
 
 
@@ -128,6 +135,11 @@ public class TourViewScript : MonoBehaviour
             StartCoroutine(mapCoroutine);
             resetMap = false;
         }
+
+        ////locationCoroutine = GetLocation();
+        ////StartCoroutine(locationCoroutine);
+        
+
 
     }
 
