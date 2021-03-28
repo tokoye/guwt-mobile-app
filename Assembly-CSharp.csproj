@@ -131,6 +131,9 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Analytics">
+ <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/ScriptAssemblies/Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
  <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
@@ -145,6 +148,9 @@
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Advertisements.Editor">
+ <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -336,13 +342,13 @@
  <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
