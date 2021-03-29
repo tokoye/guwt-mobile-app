@@ -27281,6 +27281,15 @@ public:
 };
 
 
+// GoToResources
+struct  GoToResources_tF0DCE111DF7D96526FA02974FFB7CCB2D7F6E7A0  : public MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A
+{
+public:
+
+public:
+};
+
+
 // ItemDetails
 struct  ItemDetails_t10F3B234085BA1E27EADB13A1C83A9F20A15D936  : public MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A
 {
@@ -41268,12 +41277,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4035[1] =
 {
 	DropdownBehavior_t5478F54CC08FEBC47569D22065A70D773AFB2500::get_offset_of_drop_4(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4036[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4037[2] = 
 {
 	ItemDetails_t10F3B234085BA1E27EADB13A1C83A9F20A15D936::get_offset_of_text_4(),
 	ItemDetails_t10F3B234085BA1E27EADB13A1C83A9F20A15D936::get_offset_of_image_5(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4037[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4038[6] = 
 {
 	ListCreator_t4F758936C98D1C41C7185A9A830A745860C001A2::get_offset_of_SpawnPoint_4(),
 	ListCreator_t4F758936C98D1C41C7185A9A830A745860C001A2::get_offset_of_item_5(),
@@ -41282,17 +41291,17 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4037[6] =
 	ListCreator_t4F758936C98D1C41C7185A9A830A745860C001A2::get_offset_of_itemNames_8(),
 	ListCreator_t4F758936C98D1C41C7185A9A830A745860C001A2::get_offset_of_itemImages_9(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4038[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4039[2] = 
 {
 	MediaData_t7EA84A29D9215E5601E8063E77EB776447173150::get_offset_of_s3_loc_0(),
 	MediaData_t7EA84A29D9215E5601E8063E77EB776447173150::get_offset_of__id_1(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4044[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4045[2] = 
 {
 	OrgData_t7DADECBEDF97793B47016CBCDA1814C77897A2B3::get_offset_of_success_0(),
 	OrgData_t7DADECBEDF97793B47016CBCDA1814C77897A2B3::get_offset_of_data_1(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4045[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4046[5] = 
 {
 	OrganizationDropdown_t876F85A8450FAA33A737173532477A7F3A70A178::get_offset_of_stringOptions_4(),
 	OrganizationDropdown_t876F85A8450FAA33A737173532477A7F3A70A178::get_offset_of_optionDataOptions_5(),
@@ -41300,7 +41309,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4045[5] =
 	OrganizationDropdown_t876F85A8450FAA33A737173532477A7F3A70A178::get_offset_of_fillData_7(),
 	OrganizationDropdown_t876F85A8450FAA33A737173532477A7F3A70A178::get_offset_of_beginTourButton_8(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4046[9] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4047[9] = 
 {
 	U3CGetOrganizationsU3Ed__28_t25780584607E556545F4EB7DED3444107C78446A::get_offset_of_U3CU3E1__state_0(),
 	U3CGetOrganizationsU3Ed__28_t25780584607E556545F4EB7DED3444107C78446A::get_offset_of_U3CU3E2__current_1(),
@@ -41312,14 +41321,14 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4046[9] =
 	U3CGetOrganizationsU3Ed__28_t25780584607E556545F4EB7DED3444107C78446A::get_offset_of_U3CsU3E5__5_7(),
 	U3CGetOrganizationsU3Ed__28_t25780584607E556545F4EB7DED3444107C78446A::get_offset_of_U3CfillDataU3E5__6_8(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4047[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4048[4] = 
 {
 	U3CGetToursU3Ed__29_t0474B31115B4DFC5F71ECB885A290CDB1F44C0DC::get_offset_of_U3CU3E1__state_0(),
 	U3CGetToursU3Ed__29_t0474B31115B4DFC5F71ECB885A290CDB1F44C0DC::get_offset_of_U3CU3E2__current_1(),
 	U3CGetToursU3Ed__29_t0474B31115B4DFC5F71ECB885A290CDB1F44C0DC::get_offset_of_U3CU3E4__this_2(),
 	U3CGetToursU3Ed__29_t0474B31115B4DFC5F71ECB885A290CDB1F44C0DC::get_offset_of_U3CiU3E5__1_3(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4048[25] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4049[25] = 
 {
 	RequestOrgs_tB36C6C51996496C7954D48A3A4C9251C1335BFB1::get_offset_of_orgUrl_4(),
 	RequestOrgs_tB36C6C51996496C7954D48A3A4C9251C1335BFB1::get_offset_of_toursUrl_5(),
@@ -41347,13 +41356,13 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4048[25] =
 	RequestOrgs_tB36C6C51996496C7954D48A3A4C9251C1335BFB1::get_offset_of_ninthTourButton_27(),
 	RequestOrgs_tB36C6C51996496C7954D48A3A4C9251C1335BFB1::get_offset_of_tenthTourButton_28(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4049[3] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4050[3] = 
 {
 	SingleOrg_tD3649EC0CEEB8FA3CC0940C1731C9AE1C6AC41A1::get_offset_of_name_0(),
 	SingleOrg_tD3649EC0CEEB8FA3CC0940C1731C9AE1C6AC41A1::get_offset_of__id_1(),
 	SingleOrg_tD3649EC0CEEB8FA3CC0940C1731C9AE1C6AC41A1::get_offset_of_department_2(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4050[10] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4051[10] = 
 {
 	SingleTour_t372144787449803FC637BA713A2DB4A8BD719357::get_offset_of_name_0(),
 	SingleTour_t372144787449803FC637BA713A2DB4A8BD719357::get_offset_of__id_1(),
@@ -41366,7 +41375,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4050[10] =
 	SingleTour_t372144787449803FC637BA713A2DB4A8BD719357::get_offset_of_enabled_8(),
 	SingleTour_t372144787449803FC637BA713A2DB4A8BD719357::get_offset_of_stops_9(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4051[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4052[7] = 
 {
 	StopData_t486526EE44005DD84D83A9C3A0DEFA992284BDE3::get_offset_of_stop_name_0(),
 	StopData_t486526EE44005DD84D83A9C3A0DEFA992284BDE3::get_offset_of__id_1(),
@@ -41376,12 +41385,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4051[7] =
 	StopData_t486526EE44005DD84D83A9C3A0DEFA992284BDE3::get_offset_of_lat_5(),
 	StopData_t486526EE44005DD84D83A9C3A0DEFA992284BDE3::get_offset_of_media_6(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4052[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4053[2] = 
 {
 	TourData_tA6E33DD8ACAD24A1136B76CA5623F173AF8F53B6::get_offset_of_success_0(),
 	TourData_tA6E33DD8ACAD24A1136B76CA5623F173AF8F53B6::get_offset_of_data_1(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4053[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4054[5] = 
 {
 	mapType_t6F70EBEBF54DD2C80EBCA80CFDDDE9E7489A2093::get_offset_of_value___2() + static_cast<int32_t>(sizeof(RuntimeObject)),
 	0,
@@ -41389,7 +41398,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4053[5] =
 	0,
 	0,
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4054[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4055[7] = 
 {
 	U3CGetGoogleMapU3Ed__21_tFE77F2900D2C095BD4948F83CD3ACCA37A5D18D5::get_offset_of_U3CU3E1__state_0(),
 	U3CGetGoogleMapU3Ed__21_tFE77F2900D2C095BD4948F83CD3ACCA37A5D18D5::get_offset_of_U3CU3E2__current_1(),
@@ -41399,14 +41408,14 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4054[7] =
 	U3CGetGoogleMapU3Ed__21_tFE77F2900D2C095BD4948F83CD3ACCA37A5D18D5::get_offset_of_U3CwwwU3E5__1_5(),
 	U3CGetGoogleMapU3Ed__21_tFE77F2900D2C095BD4948F83CD3ACCA37A5D18D5::get_offset_of_U3CiU3E5__2_6(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4055[4] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4056[4] = 
 {
 	U3CGetLocationU3Ed__22_t0C0D0D7A6FB70C226F072D5162B5883B790B9542::get_offset_of_U3CU3E1__state_0(),
 	U3CGetLocationU3Ed__22_t0C0D0D7A6FB70C226F072D5162B5883B790B9542::get_offset_of_U3CU3E2__current_1(),
 	U3CGetLocationU3Ed__22_t0C0D0D7A6FB70C226F072D5162B5883B790B9542::get_offset_of_U3CU3E4__this_2(),
 	U3CGetLocationU3Ed__22_t0C0D0D7A6FB70C226F072D5162B5883B790B9542::get_offset_of_U3CmaxWaitU3E5__1_3(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4056[20] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4057[20] = 
 {
 	TourViewScript_t9EBFA07AAD21A1DC0BA18280283E06898492F91A_StaticFields::get_offset_of_tourData_4(),
 	TourViewScript_t9EBFA07AAD21A1DC0BA18280283E06898492F91A::get_offset_of_url_5(),

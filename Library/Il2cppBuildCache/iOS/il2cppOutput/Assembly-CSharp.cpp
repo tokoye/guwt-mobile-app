@@ -132,6 +132,8 @@ struct DropdownBehavior_t5478F54CC08FEBC47569D22065A70D773AFB2500;
 struct FontData_t0F1E9B3ED8136CD40782AC9A6AFB69CAD127C738;
 // UnityEngine.GameObject
 struct GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319;
+// GoToResources
+struct GoToResources_tF0DCE111DF7D96526FA02974FFB7CCB2D7F6E7A0;
 // UnityEngine.UI.Graphic
 struct Graphic_tF07D777035055CF93BA5F46F77ED5EDFEFF9AE24;
 // System.IAsyncResult
@@ -3987,6 +3989,15 @@ public:
 };
 
 
+// GoToResources
+struct  GoToResources_tF0DCE111DF7D96526FA02974FFB7CCB2D7F6E7A0  : public MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A
+{
+public:
+
+public:
+};
+
+
 // ItemDetails
 struct  ItemDetails_t10F3B234085BA1E27EADB13A1C83A9F20A15D936  : public MonoBehaviour_t37A501200D970A8257124B0EAE00A0FF3DDC354A
 {
@@ -6461,6 +6472,40 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DropdownBehavior_dropdownClicked_m4A68D5
 }
 // System.Void DropdownBehavior::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DropdownBehavior__ctor_mABB8D3C645CC99306C6DF3697047FD49A66B2C5F (DropdownBehavior_t5478F54CC08FEBC47569D22065A70D773AFB2500 * __this, const RuntimeMethod* method)
+{
+	{
+		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void GoToResources::loadARscene()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GoToResources_loadARscene_m535B419EDFAA9C0B1BA6C661F4098C888E2F5290 (GoToResources_tF0DCE111DF7D96526FA02974FFB7CCB2D7F6E7A0 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SceneManager_tEC9D10ECC0377F8AE5AEEB5A789FFD24364440FA_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralAD33801D3AD0BACB3C57C60375FF470E38366A48);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// SceneManager.LoadScene("GU Resources");
+		IL2CPP_RUNTIME_CLASS_INIT(SceneManager_tEC9D10ECC0377F8AE5AEEB5A789FFD24364440FA_il2cpp_TypeInfo_var);
+		SceneManager_LoadScene_m7DAF30213E99396ECBDB1BD40CC34CCF36902092(_stringLiteralAD33801D3AD0BACB3C57C60375FF470E38366A48, /*hidden argument*/NULL);
+		// }
+		return;
+	}
+}
+// System.Void GoToResources::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GoToResources__ctor_mA8E7EF70504A2A33A09E017080B46EF2C7B5565C (GoToResources_tF0DCE111DF7D96526FA02974FFB7CCB2D7F6E7A0 * __this, const RuntimeMethod* method)
 {
 	{
 		MonoBehaviour__ctor_mC0995D847F6A95B1A553652636C38A2AA8B13BED(__this, /*hidden argument*/NULL);

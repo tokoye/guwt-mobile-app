@@ -31,6 +31,8 @@
       <key>NSAllowsArbitraryLoads</key>
       <true />
     </dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Allow app to access location?</string>
     <key>UILaunchStoryboardName</key>
     <string>LaunchScreen-iPhone</string>
     <key>UILaunchStoryboardName~ipad</key>

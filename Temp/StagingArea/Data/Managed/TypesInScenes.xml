@@ -37,6 +37,7 @@
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="BackToInitialView" preserve="nothing"/>
+		<type fullname="GoToResources" preserve="nothing"/>
 		<type fullname="ItemDetails" preserve="nothing"/>
 		<type fullname="ListCreator" preserve="nothing"/>
 		<type fullname="NextScene" preserve="nothing"/>
