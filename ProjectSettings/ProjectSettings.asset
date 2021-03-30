@@ -413,7 +413,7 @@ PlayerSettings:
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
   cameraUsageDescription: 
-  locationUsageDescription: 
+  locationUsageDescription: Allow app to access location?
   microphoneUsageDescription: 
   switchNMETAOverride: 
   switchNetLibKey: 
