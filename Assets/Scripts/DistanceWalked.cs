@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class DistanceWalked : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class DistanceWalked : MonoBehaviour
     {
         distanceWalked = PlayerPrefs.GetInt("distance", 0);
         distanceWalkedText = GameObject.Find("DistanceWalked").GetComponent<Text>();
-        distanceWalkedText.text = distanceWalked.ToString() + " Feet Walked";
+        double distanceD = distanceWalked / 5280;
+        distanceWalkedText.text = Math.Round(distanceD, 2) + " Miles Walked";
 
         resetButton = GameObject.Find("ResetButton").GetComponent<Button>();
         resetButton.onClick.AddListener(onResetButtonClicked);

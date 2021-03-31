@@ -69,7 +69,7 @@ public class TourViewScript : MonoBehaviour
         //    yield break;
         //debugTest.text = "Passed";
 
-        Input.location.Start();
+        Input.location.Start(3);
 
         int maxWait = 20;
         while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
@@ -199,7 +199,7 @@ public class TourViewScript : MonoBehaviour
         double distance = DistanceTo(lat, lon, tourData.stops[currentStop].lat, tourData.stops[currentStop].lng);
         if(distance > 10)
         {
-            goToStopButton.GetComponentInChildren<Text>().text = distance + " feet";
+            goToStopButton.GetComponentInChildren<Text>().text = Math.Round(distance, 1) + " feet";
             goToStopButton.interactable = false;
         }
         else
