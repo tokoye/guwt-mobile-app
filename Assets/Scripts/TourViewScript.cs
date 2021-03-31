@@ -11,6 +11,8 @@ public class TourViewScript : MonoBehaviour
     string url = "";
     public double lat = 47.66685234815894;      //initial latitude and longitude to center on
     public double lon = -117.40292486555248;
+    public double prevLat = -1;
+    public double prevLon = -1;
     LocationInfo li;
     public int zoom = 19;
     public int mapWidth = 640;
@@ -21,7 +23,7 @@ public class TourViewScript : MonoBehaviour
     public string key = "";
     public string[] markers = new string[] {};
     public bool resetMap = false;
-    public int currentStop = 0;
+    static public int currentStop = 0;
 
     private bool loadingMap = false;
 
@@ -107,6 +109,24 @@ public class TourViewScript : MonoBehaviour
         StartCoroutine(locationCoroutine);
     }
 
+    void RepeatEveryTwentySeconds()
+    {
+        if(lat != 0 && lon != 0)
+        {
+            int distanceWalked = PlayerPrefs.GetInt("distance", 0);
+            if (prevLat < 0)
+            {
+                prevLat = lat;
+                prevLon = lon;
+            }
+            double dist = DistanceTo(prevLat, prevLon, lat.ToString(), lon.ToString());
+            distanceWalked += Convert.ToInt32(dist);
+            PlayerPrefs.SetInt("distance", distanceWalked);
+            PlayerPrefs.Save();
+        }
+
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -139,6 +159,7 @@ public class TourViewScript : MonoBehaviour
         StartCoroutine(locationCoroutine);
 
         InvokeRepeating("RepeatEverySecond", 1, 1);
+        InvokeRepeating("RepeatEveryTwentySeconds", 10, 20);
 
         resetMap = true;
     }
