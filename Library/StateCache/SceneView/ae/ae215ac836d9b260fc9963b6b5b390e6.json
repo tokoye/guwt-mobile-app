@@ -1,1 +1,13 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":617.1873779296875,"y":853.6095581054688,"z":-288.59991455078127},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":706.0558471679688,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":586.4555053710938,"y":1235.0577392578125,"z":-251.4330596923828},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":531.2202758789063,"orthographic":true}
+>>>>>>> 4fef09f0f3de8fa19beaa9e65cdcdb2961b7a9c3
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":1172.112060546875,"y":590.3518676757813,"z":-73.82199096679688},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":1119.0465087890625,"orthographic":true}
+>>>>>>> tokoye-main
+=======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":601.2384643554688,"y":105.87238311767578,"z":-111.02519226074219},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":207.44625854492188,"orthographic":true}
+>>>>>>> tokoye-main

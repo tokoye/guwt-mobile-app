@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ public class TourViewScript : MonoBehaviour
     public string key = "";
     public string[] markers = new string[] {};
     public bool resetMap = false;
+    public int currentStop = 0;
 
     private bool loadingMap = false;
 
@@ -27,9 +29,11 @@ public class TourViewScript : MonoBehaviour
     private IEnumerator locationCoroutine;
 
     public Button resetButton;
-    public Text debugTest;
-    public Text tourInfo;
+    public Button previousStopButton;
+    public Button nextStopButton;
+    public Button goToStopButton;
     public Text stopInfo;
+    public Text tourInfo;
 
     //this handles getting the google map and placing it on the texture
     IEnumerator GetGoogleMap(double lat, double lon)
@@ -38,9 +42,9 @@ public class TourViewScript : MonoBehaviour
             "&zoom=" + zoom + "&size=" + mapWidth + "x" + mapHeight +
             "&maptype=" + mapSelected + "&key=" + key;
 
-        for (int i = 0; i < markers.Length; i++)
+        for (int i = 0; i < tourData.stops.Count; i++)
         {
-            url += "&markers=color:red|label:S|" + markers[i];
+            url += "&markers=color:red|label:" + i + "|" + tourData.stops[i].lat + "," + tourData.stops[i].lng;
         }
 
         url += "&markers=color:blue|label:Y|" + lat + "," + lon;
@@ -74,26 +78,33 @@ public class TourViewScript : MonoBehaviour
 
         if (maxWait < 1)
         {
-            debugTest.text = "Timed Out";
             print("Timed out");
             yield break;
         }
 
         if (Input.location.status == LocationServiceStatus.Failed)
         {
-            debugTest.text = "Unable to determine device location";
             print("Unable to determine device location");
             yield break;
         }
         else
         {
-            debugTest.text = "Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude;
+
             lat = Input.location.lastData.latitude;
             lon = Input.location.lastData.longitude;
+            if(lat != 0 && lon != 0)
+            {
+                resetMap = true;
+            }
             print("Location: " + Input.location.lastData.latitude + " " + Input.location.lastData.longitude + " " + Input.location.lastData.altitude + " " + Input.location.lastData.horizontalAccuracy + " " + Input.location.lastData.timestamp);
-            resetMap = true;
         }
         Input.location.Stop(); 
+    }
+
+    void RepeatEverySecond()
+    {
+        locationCoroutine = GetLocation();
+        StartCoroutine(locationCoroutine);
     }
 
 
@@ -101,11 +112,16 @@ public class TourViewScript : MonoBehaviour
     void Start()
     {
         print("this is a tour" + tourData.name);
-        debugTest = GameObject.Find("DebugTest").GetComponent<Text>();
+
+         print("Distance: " + DistanceTo(lat, lon, tourData.stops[0].lat, tourData.stops[0].lng));
         //debugTest.text = "worked";
 
-        LoadTourInfo();
+
+        goToStopButton = GameObject.Find("GoToStopButton").GetComponent<Button>();
+
+
         LoadStopInfo();
+        LoadTourInfo();
 
         mapCoroutine = GetGoogleMap(lat, lon);
         StartCoroutine(mapCoroutine);
@@ -113,9 +129,18 @@ public class TourViewScript : MonoBehaviour
         resetButton = GameObject.Find("RefreshButton").GetComponent<Button>();
         resetButton.onClick.AddListener(onRefreshButtonClicked);
 
+        previousStopButton = GameObject.Find("PreviousStopButton").GetComponent<Button>();
+        previousStopButton.onClick.AddListener(OnPreviousStopButtonClicked);
+
+        nextStopButton = GameObject.Find("NextStopButton").GetComponent<Button>();
+        nextStopButton.onClick.AddListener(OnNextStopButtonClicked);
 
         locationCoroutine = GetLocation();
         StartCoroutine(locationCoroutine);
+
+        InvokeRepeating("RepeatEverySecond", 1, 1);
+
+        resetMap = true;
     }
 
 
@@ -126,37 +151,93 @@ public class TourViewScript : MonoBehaviour
         {
             mapCoroutine = GetGoogleMap(lat, lon);
             StartCoroutine(mapCoroutine);
+            LoadStopInfo();
             resetMap = false;
         }
+
+        ////locationCoroutine = GetLocation();
+        ////StartCoroutine(locationCoroutine);
+        
+
 
     }
 
     public void LoadTourInfo()
     {
         tourInfo = GameObject.Find("TourDetailsText").GetComponent<Text>();
-        string text = "";
-        text += "Tour Name: " + tourData.name + "\n";
-        text += "Organization: " + tourData.organization + "\n";
-        text += "Departement: " + tourData.departement + "\n";
-        text += "Number of stops: " + tourData.stops.Count + "\n";
+        string text = tourData.name;
         tourInfo.text = text;
     }
 
     public void LoadStopInfo()
     {
         stopInfo = GameObject.Find("StopDetailsText").GetComponent<Text>();
-        string text = "";
-        for(int i = 0; i < tourData.stops.Count; i++)
-        {
-            int temp = i + 1;
-            text +=  temp + ") Name: " + tourData.stops[i].stop_name + "\n";
-            text += "\t" + "Latitude: " + tourData.stops[i].lat + "\n";
-        }
+        string text = tourData.stops[currentStop].stop_name;
         stopInfo.text = text;
+
+        double distance = DistanceTo(lat, lon, tourData.stops[currentStop].lat, tourData.stops[currentStop].lng);
+        if(distance > 10)
+        {
+            goToStopButton.GetComponentInChildren<Text>().text = distance + " feet";
+            goToStopButton.interactable = false;
+        }
+        else
+        {
+            goToStopButton.GetComponentInChildren<Text>().text = "go to stop";
+            goToStopButton.interactable = true;
+        }
+
     }
 
     public void onRefreshButtonClicked()
     {
         resetMap = true;
+    }
+
+    //decrements to the previous stop
+    public void OnPreviousStopButtonClicked()
+    {
+        if(currentStop > 0)
+        {
+            currentStop--;
+            string text = tourData.stops[currentStop].stop_name;
+            stopInfo.text = text;
+        }
+    }
+
+    //increments to the next stop
+    public void OnNextStopButtonClicked()
+    {
+        if(currentStop < tourData.stops.Count - 1)
+        {
+            currentStop++;
+            string text = tourData.stops[currentStop].stop_name;
+            stopInfo.text = text;
+        }
+    }
+
+    public static double DistanceTo(double lat1, double lon1, string lt2, string ln2)
+    {
+        //double lat1 = 0;
+        //double lon1 = 0;
+        double lat2 = 0;
+        double lon2 = 0;
+        //double.TryParse(lt1, lat1);
+        double.TryParse(lt2, out lat2);
+        //double.TryParse(ln1, lon1);
+        double.TryParse(ln2, out lon2);
+
+        double rlat1 = Math.PI * lat1 / 180;
+        double rlat2 = Math.PI * lat2 / 180;
+        double theta = lon1 - lon2;
+        double rtheta = Math.PI * theta / 180;
+        double dist =
+            Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *
+            Math.Cos(rlat2) * Math.Cos(rtheta);
+        dist = Math.Acos(dist);
+        dist = dist * 180 / Math.PI;
+        dist = dist * 60 * 1.1515;
+
+        return dist * 5280;
     }
 }
