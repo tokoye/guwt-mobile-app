@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\NextScene.cs" />
      <Compile Include="Assets\Scripts\TourInspectScript.cs" />
+     <Compile Include="Assets\Scripts\DistanceWalked.cs" />
      <Compile Include="Assets\Scripts\DisableButton.cs" />
      <Compile Include="Assets\Scripts\DisplayTourList.cs" />
      <Compile Include="Assets\Scripts\ItemDetails.cs" />
@@ -78,7 +79,6 @@
      <Compile Include="Assets\Scripts\SingleOrg.cs" />
      <Compile Include="Assets\Scripts\StopData.cs" />
      <Compile Include="Assets\Scripts\OpenSignUp.cs" />
-     <Compile Include="Assets\Scripts\DistanceWalked.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
