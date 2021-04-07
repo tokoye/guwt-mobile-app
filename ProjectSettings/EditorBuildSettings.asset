@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GU Resources.unity
     guid: 06aa09f534d8347579afba10f38663de
+  - enabled: 1
+    path: Assets/Scenes/StopScene.unity
+    guid: 59ac380502f2e714b9169d475eec6dbf
   m_configObjects: {}
