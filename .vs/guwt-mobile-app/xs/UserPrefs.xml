@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{86C55F2B-BF24-57D4-ECBF-51CB032D481F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackToTourStop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GoToStopScene.cs">
     <Files>
-      <File FileName="Assets/Scripts/GoToResources.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/GoToTourStop.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/GoToResources.cs" />
       <File FileName="Assets/Scripts/BackToTourStop.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bfebe5f2-0508-4bcd-9dab-74b20ab70abb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fb861e36-6b22-47ae-8d74-90dc14c10c56" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

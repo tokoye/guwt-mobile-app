@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BackToInitialView
+    - DistanceWalked
+    - GoToResources
     - ItemDetails
     - ListCreator
     - NextScene
@@ -10,9 +12,12 @@ ScriptsOnlyBuild:
     - OpenSignUp
     - OrganizationDropdown
     - RequestOrgs
+    - TourInspectScript
     - TourViewScript
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -28,7 +33,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -71,23 +75,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 13008}
+      Script: {instanceID: 13010}
     - Class: 114
-      Script: {instanceID: 13096}
+      Script: {instanceID: 13098}
     - Class: 114
-      Script: {instanceID: 13330}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 13430}
     - Class: 114
-      Script: {instanceID: 13464}
+      Script: {instanceID: 13466}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14622}
+      Script: {instanceID: 14626}
     - Class: 114
-      Script: {instanceID: 14672}
+      Script: {instanceID: 14676}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -95,6 +99,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -136,39 +142,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12364}
     - Class: 114
-      Script: {instanceID: 12628}
+      Script: {instanceID: 12630}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 12808}
+      Script: {instanceID: 12810}
     - Class: 114
-      Script: {instanceID: 12948}
+      Script: {instanceID: 12950}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 13092}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 13430}
     - Class: 114
-      Script: {instanceID: 13494}
+      Script: {instanceID: 13496}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13564}
+      Script: {instanceID: 13566}
     - Class: 114
-      Script: {instanceID: 13738}
+      Script: {instanceID: 13740}
     - Class: 114
-      Script: {instanceID: 13754}
+      Script: {instanceID: 13756}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14358}
+      Script: {instanceID: 14302}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14362}
     - Class: 114
-      Script: {instanceID: 14604}
+      Script: {instanceID: 14382}
     - Class: 114
-      Script: {instanceID: 14622}
+      Script: {instanceID: 14608}
     - Class: 114
-      Script: {instanceID: 14644}
+      Script: {instanceID: 14626}
+    - Class: 114
+      Script: {instanceID: 14648}
+    - Class: 114
+      Script: {instanceID: 15518}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -187,7 +197,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
-    Assets/Scenes/MainScene.unity:
+    Assets/Scenes/InspectTour.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -209,31 +219,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12050}
-    - Class: 114
-      Script: {instanceID: 12152}
-    - Class: 114
       Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12628}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 13090}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 13430}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13466}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14566}
-    - Class: 114
-      Script: {instanceID: 14604}
-    - Class: 114
-      Script: {instanceID: 14622}
-    - Class: 114
-      Script: {instanceID: 14644}
+      Script: {instanceID: 14626}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -249,8 +249,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 850595691
       Script: {instanceID: 0}
     Assets/Scenes/TourStop.unity:
     - Class: 1
@@ -276,70 +274,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 13330}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13428}
+      Script: {instanceID: 13430}
     - Class: 114
-      Script: {instanceID: 13464}
+      Script: {instanceID: 13466}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14232}
+      Script: {instanceID: 14234}
     - Class: 114
-      Script: {instanceID: 14622}
+      Script: {instanceID: 14626}
     - Class: 114
-      Script: {instanceID: 14644}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/ZagaTourType.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 11886}
-    - Class: 114
-      Script: {instanceID: 11912}
-    - Class: 114
-      Script: {instanceID: 12196}
-    - Class: 114
-      Script: {instanceID: 12766}
-    - Class: 114
-      Script: {instanceID: 13428}
-    - Class: 114
-      Script: {instanceID: 13464}
-    - Class: 114
-      Script: {instanceID: 14116}
-    - Class: 114
-      Script: {instanceID: 14622}
+      Script: {instanceID: 14648}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -519,6 +468,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 0e9202d15e49b7718f3463499e33b3f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TourInspectScript
   - hash:
       serializedVersion: 2
       Hash: ef5c43f921427d03730f6ea4c848f07d
@@ -809,10 +764,16 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 72be65a367b916884c74bd5f5d9e8ec5
+      Hash: 11ac9f52e5f5525ece32a53ff7c65dc4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TourViewScript
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GoToResources
   - hash:
       serializedVersion: 2
       Hash: 893dbdbfe611d62e230a686ea89f1efd
@@ -945,11 +906,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DistanceWalked
   platform: 13
   scenePathNames:
   - Assets/Scenes/InitialView.unity
-  - Assets/Scenes/ZagaTourType.unity
-  - Assets/Scenes/MainScene.unity
   - Assets/Scenes/TourStop.unity
   - Assets/Scenes/GU Resources.unity
+  - Assets/Scenes/InspectTour.unity
   playerPath: C:/Users/nicho/Documents/Senior Design/my-branch/guwt-mobile-app/android_build.apk

@@ -79,6 +79,9 @@
     <Compile Include="Assets/Scripts/OpenSignUp.cs" />
     <Compile Include="Assets/Scripts/DisplayTourList.cs" />
     <Compile Include="Assets/Scripts/BackToTourStop.cs" />
+    <Compile Include="Assets/Scripts/TourInspectScript.cs" />
+    <Compile Include="Assets/Scripts/DistanceWalked.cs" />
+    <Compile Include="Assets/Scripts/GoToStopScene.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

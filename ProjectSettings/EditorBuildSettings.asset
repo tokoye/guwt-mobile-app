@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ZagaTourType.unity
     guid: 1ae3e7580c34746d39b8c4e4f5b55c1b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: 40a453d0dda036f44ad9be3b16424e72
   - enabled: 1
@@ -24,6 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/GU Resources.unity
     guid: 06aa09f534d8347579afba10f38663de
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/StopScene.unity
     guid: 59ac380502f2e714b9169d475eec6dbf
+=======
+    path: Assets/Scenes/InspectTour.unity
+    guid: 0f2ddddc9c5f0464d9ddf81d9bb01150
+>>>>>>> upstream/main
   m_configObjects: {}
