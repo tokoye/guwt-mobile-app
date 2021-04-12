@@ -56,6 +56,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\NextScene.cs" />
+     <Compile Include="Assets\Scripts\BackToTourStop.cs" />
+     <Compile Include="Assets\Scripts\TourInspectScript.cs" />
+     <Compile Include="Assets\Scripts\DistanceWalked.cs" />
+     <Compile Include="Assets\Scripts\GoToStopScene.cs" />
      <Compile Include="Assets\Scripts\DisableButton.cs" />
      <Compile Include="Assets\Scripts\DisplayTourList.cs" />
      <Compile Include="Assets\Scripts\ItemDetails.cs" />
