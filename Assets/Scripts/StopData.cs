@@ -12,4 +12,5 @@ public class StopData
     public string lng;
     public string lat;
     public List<MediaData> media;
+    public string media_desc;
 }
