@@ -44,12 +44,15 @@ public class TourViewScript : MonoBehaviour
             "&zoom=" + zoom + "&size=" + mapWidth + "x" + mapHeight +
             "&maptype=" + mapSelected + "&key=" + key;
 
+        string paths = "&path=color:0x0000ff|weight:1|" + lat.ToString() + "," + lon.ToString();
         for (int i = 0; i < tourData.stops.Count; i++)
         {
             url += "&markers=color:red|label:" + i + "|" + tourData.stops[i].lat + "," + tourData.stops[i].lng;
+            paths += "|" + tourData.stops[i].lat + "," + tourData.stops[i].lng;
         }
 
         url += "&markers=color:blue|label:Y|" + lat + "," + lon;
+        url += paths;
 
         loadingMap = true;
         //UnityWebRequest www = new UnityWebRequest(url);
@@ -200,7 +203,7 @@ public class TourViewScript : MonoBehaviour
         if(distance > 10)
         {
             goToStopButton.GetComponentInChildren<Text>().text = Math.Round(distance, 1) + " feet";
-            goToStopButton.interactable = false;
+            goToStopButton.interactable = true; //@todo change this to false later on when we are done debugging
         }
         else
         {
