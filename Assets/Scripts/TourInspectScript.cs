@@ -49,7 +49,7 @@ public class TourInspectScript : MonoBehaviour
         WWW www = new WWW(url);
         yield return (www);
         loadingMap = false;
-        GameObject.Find("RawImage").GetComponent<RawImage>().texture = www.texture;
+        GameObject.Find("RawImageMap").GetComponent<RawImage>().texture = www.texture;
         StopCoroutine(mapCoroutine);
     }
 
