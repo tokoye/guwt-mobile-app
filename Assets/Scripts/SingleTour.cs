@@ -7,6 +7,7 @@ public class SingleTour
 {
     public string name;
     public string _id;
+    public string description;
     public string organization;
     public string departement;
     public string number_of_stops;
