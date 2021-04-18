@@ -120,6 +120,8 @@ public class RequestOrgs : MonoBehaviour
 
             List<string> stringOrgNames = new List<string>();
 
+            stringOrgNames.Add("Select an Organization");
+            
             //read all organization names to a list
             for(int i = 0; i < response.data.Count; i++)
             {
