@@ -14,6 +14,6 @@ public class SingleTour
     public string createdAt;
     public string updatedAt;
     public string __v;
-    public string enabled;
+    public bool enabled;
     public List<StopData> stops;
 }

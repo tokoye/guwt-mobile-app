@@ -35,6 +35,8 @@ public class RequestOrgs : MonoBehaviour
     public Button ninthTourButton;
     public Button tenthTourButton;
 
+    public Button beginTourButton;
+    public Button inspectTourButton;
 
 
     public void Start()
@@ -49,6 +51,12 @@ public class RequestOrgs : MonoBehaviour
             DropdownValueChanged(drop);
         });
 
+
+        beginTourButton = GameObject.Find("beginTourButton").GetComponent<Button>();
+        inspectTourButton = GameObject.Find("inspectTourButton (1)").GetComponent<Button>();
+
+        beginTourButton.interactable = false;
+        inspectTourButton.interactable = false;
 
     }
 
@@ -97,6 +105,9 @@ public class RequestOrgs : MonoBehaviour
     {
         Debug.Log("Tour Button " + index + " Pressed:" + orgTourData.data[index].name);
         TourViewScript.tourData = orgTourData.data[index];
+
+        beginTourButton.interactable = true;
+        inspectTourButton.interactable = true;
     }
 
     //This function makes a call to the database and populates the Organization dropdown with those organizations.
@@ -161,8 +172,17 @@ public class RequestOrgs : MonoBehaviour
             //adding tour names and tour organizations to their own lists
             for(int i = 0; i < tourResponse.data.Count; i++)
             {
-                allTourNames.Add(tourResponse.data[i].name);
-                organizationOfEachTour.Add(tourResponse.data[i].organization);
+                //doing a check to make sure that the tour has been enabled and there are stops within the tour
+                if (tourResponse.data[i].enabled && tourResponse.data[i].stops.Count > 0)
+                {
+                    allTourNames.Add(tourResponse.data[i].name);
+                    organizationOfEachTour.Add(tourResponse.data[i].organization);
+                }
+                else
+                {
+                    tourResponse.data.RemoveAt(i);
+                    i--;
+                }
             }
         }
     }
