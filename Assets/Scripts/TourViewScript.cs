@@ -45,7 +45,7 @@ public class TourViewScript : MonoBehaviour
             "&maptype=" + mapSelected + "&key=" + key;
 
         string paths = "&path=color:0x0000ff|weight:1|" + lat.ToString() + "," + lon.ToString();
-        for (int i = 0; i < tourData.stops.Count; i++)
+        for (int i = currentStop; i < tourData.stops.Count; i++)
         {
             url += "&markers=color:red|label:" + i + "|" + tourData.stops[i].lat + "," + tourData.stops[i].lng;
             paths += "|" + tourData.stops[i].lat + "," + tourData.stops[i].lng;

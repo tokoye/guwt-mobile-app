@@ -26,6 +26,7 @@ public class TourInspectScript : MonoBehaviour
 
     private IEnumerator mapCoroutine;
     private IEnumerator locationCoroutine;
+    private IEnumerator imageCoroutine;
 
     public Text tourInfo;
 
@@ -49,7 +50,7 @@ public class TourInspectScript : MonoBehaviour
         WWW www = new WWW(url);
         yield return (www);
         loadingMap = false;
-        GameObject.Find("RawImage").GetComponent<RawImage>().texture = www.texture;
+        GameObject.Find("RawImageMap").GetComponent<RawImage>().texture = www.texture;
         StopCoroutine(mapCoroutine);
     }
 
@@ -143,6 +144,69 @@ public class TourInspectScript : MonoBehaviour
         tourInfo = GameObject.Find("TourDetailsText").GetComponent<Text>();
         string text = TourViewScript.tourData.name;
         tourInfo.text = text;
+
+        text = "";
+        text += TourViewScript.tourData.description;
+        text += "\n\nThere are ";
+        text += TourViewScript.tourData.stops.Count;
+        text += " stops within this tour\n\nThis tour is ";
+        double distance = 0;
+        for (int i = 1; i < TourViewScript.tourData.stops.Count; i++)
+        {
+            distance += DistanceTo(TourViewScript.tourData.stops[i - 1].lat, TourViewScript.tourData.stops[i - 1].lng, TourViewScript.tourData.stops[i].lat, TourViewScript.tourData.stops[i].lng);
+        }
+        text += Math.Round(distance, 1);
+        text += " feet\n\nWould you like to proced to the stops within the tour?";
+        GameObject.Find("DescriptionText").GetComponent<Text>().text = text;
+
+        //gets the first picture available and places it
+        bool notFound = true;
+        int position = -1;
+        for (int i = 0; notFound && i < TourViewScript.tourData.stops.Count; i++)
+        {
+            if (TourViewScript.tourData.stops[i].media.Count > 0)
+            {
+                position = i;
+                notFound = false;
+            }
+        }
+        if(position != -1)
+        {
+            imageCoroutine = SetImage(position);
+            StartCoroutine(imageCoroutine);
+        }
+    }
+
+    IEnumerator SetImage(int position)
+    {
+        WWW www = new WWW(TourViewScript.tourData.stops[position].media[0].s3_loc);
+        yield return (www);
+        GameObject.Find("RawImage").GetComponent<RawImage>().texture = www.texture;
+    }
+
+    public static double DistanceTo(string lt1, string ln1, string lt2, string ln2)
+    {
+        double lat1 = 0;
+        double lon1 = 0;
+        double lat2 = 0;
+        double lon2 = 0;
+        double.TryParse(lt1, out lat1);
+        double.TryParse(lt2, out lat2);
+        double.TryParse(ln1, out lon1);
+        double.TryParse(ln2, out lon2);
+
+        double rlat1 = Math.PI * lat1 / 180;
+        double rlat2 = Math.PI * lat2 / 180;
+        double theta = lon1 - lon2;
+        double rtheta = Math.PI * theta / 180;
+        double dist =
+            Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *
+            Math.Cos(rlat2) * Math.Cos(rtheta);
+        dist = Math.Acos(dist);
+        dist = dist * 180 / Math.PI;
+        dist = dist * 60 * 1.1515;
+
+        return dist * 5280;
     }
 
 }
